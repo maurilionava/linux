@@ -75,6 +75,7 @@
 ---
 
 ## 5. Permissões de Arquivo
+# usuário:grupo:outros 777 421421421 111000111 rwxrwx---
 - `chmod -v 755 file.txt` – Permissões `rwxr-xr-x`  
   - `-R` – Aplicar recursivamente  
   - `ugo+x` – Adicionar execução a todos  
@@ -185,3 +186,19 @@
 - `fdisk /dev/sdX` – Abrir utilitário fdisk  
 - `parted /dev/sdX` – Abrir utilitário parted  
 - `mkfs.ext4 -c -L label /dev/sdX1` – Criar sistema de arquivos ext4 na partição  
+
+---
+
+## 14. Montagem e Desmontagem de Sistemas de Arquivos
+
+- `mkfs /dev/sda1` – Criar sistema de arquivos em uma partição (ex: EXT4, XFS).  
+- `mount -arvw /dev/sda1 /diretorio` – Montar o dispositivo `/dev/sda1` no diretório especificado.  
+  - `-a` → Monta todos os sistemas listados no `/etc/fstab`  
+  - `-r` → Monta como somente leitura  
+  - `-v` → Verbose (detalhado)  
+  - `-w` → Monta como leitura e escrita  
+- `umount opções dispositivo|diretorio` – Desmontar sistema de arquivos.  
+  - Exemplo: `umount /dev/sda1` ou `umount /diretorio`  
+- `umount -at nfs` – Desmontar todos os sistemas de arquivos do tipo NFS.  
+- `fsck opções tipo_sistema_arquivo` – Verificar e reparar sistemas de arquivos.  
+  - Exemplo: `fsck -t ext4 /dev/sda1`  

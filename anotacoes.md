@@ -98,6 +98,8 @@ Forma de organização e armazenamento das pastas e arquivos no sistema operacio
   - Suporta arquivos de até 16TB e partições de até 1 exabyte.  
 - **Journaling:** mecanismo de registro que protege contra falhas de energia ou sistema.  
   - Mantém um log (diário) de operações pendentes, reduzindo risco de corrupção.  
+- **/etc/fstab:** arquivo de configuração que define quais sistemas de arquivos devem ser montados automaticamente na inicialização e suas opções.  
+- **Pontos de montagem:** diretórios especiais que funcionam como “portas de acesso” para dispositivos de armazenamento.  
 
 Outros sistemas de arquivos comuns:  
 - **NTFS:** usado pelo Windows.  
